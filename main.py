@@ -17,7 +17,8 @@ def get_data(url: str):
 def main():
     url = "https://api.data.gov/ed/collegescorecard/v1/schools.json?school.degrees_awarded.predominant=2,3&fields=id,school.state,school.name"
     all_data = get_data(url)
-    print(all_data)
+    for school_data in all_data:
+        print(school_data)
 
 if __name__ == '__main__':
     main()
