@@ -8,7 +8,9 @@ def get_data(url: str):
     if response.status_code != 200:
         print(response.text)
         return []
-    print("Good data")
+    json_data = response.json()
+    page_data = json_data["results"]
+    final_data.extend(page_data)
     return final_data
 
 
