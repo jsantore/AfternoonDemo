@@ -3,7 +3,7 @@ import secrets
 
 def get_data(url: str):
     final_data = []
-    final_url = f"{url}&api_key={secrets.api_key}"
+    final_url = f"{url}&api_key={secrets.api_key}&page=8"
     response = requests.get(final_url)
     if response.status_code != 200:
         print(response.text)
