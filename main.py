@@ -1,13 +1,14 @@
 import requests
-
+import secrets
 
 def get_data(url: str):
     final_data = []
-    response = requests.get(url)
-
+    final_url = f"{url}&api_key={secrets.api_key}"
+    response = requests.get(final_url)
     if response.status_code != 200:
         print(response.text)
         return []
+    print("Good data")
     return final_data
 
 
